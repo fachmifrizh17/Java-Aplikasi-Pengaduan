@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sarana" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b2d4b5ea-d82b-4acf-ba10-df7201c217df">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="22"/>
+	<queryString>
+		<![CDATA[SELECT
+     sarana.`id_sarana` AS sarana_id_sarana,
+     sarana.`nama_siswa` AS sarana_nama_siswa,
+     sarana.`jenis_sarana` AS sarana_jenis_sarana,
+     sarana.`keterangan` AS sarana_keterangan,
+     sarana.`status` AS sarana_status
+FROM
+     `sarana` sarana]]>
+	</queryString>
+	<field name="sarana_id_sarana" class="java.lang.String"/>
+	<field name="sarana_nama_siswa" class="java.lang.String"/>
+	<field name="sarana_jenis_sarana" class="java.lang.String"/>
+	<field name="sarana_keterangan" class="java.lang.String"/>
+	<field name="sarana_status" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="134" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="134" uuid="8138a234-5bed-48d3-a38a-531d66c8d772"/>
+				<imageExpression><![CDATA["C:\\Users\\FBS\\OneDrive\\Desktop\\1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="135" y="9" width="317" height="20" uuid="72447afd-f9e6-43b0-81b7-c6009d51b3f3"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENGADUAN SARANA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="6" width="100" height="20" uuid="939c9c67-7aea-4471-aa2d-b03ab5d6c556"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID LAPORAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="6" width="100" height="20" uuid="10008df2-80da-48f1-9f69-79ac821d2b70"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="6" width="100" height="20" uuid="e33b42a0-dfd7-4a33-a790-87b5ff76cd39"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS SARANA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="386" y="6" width="169" height="20" uuid="03558565-4224-4a2e-bd99-d74ab009913d"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISI KELUHAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1" uuid="88bb19a5-b922-4b97-8bd8-cb2360bea369"/>
+			</line>
+			<line>
+				<reportElement x="0" y="28" width="555" height="1" uuid="9a733669-37c5-4215-9765-39b5def36cdb"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="100" height="20" uuid="e8d936d4-6442-4f66-b159-3c803c113747"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sarana_id_sarana}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="1" width="100" height="20" uuid="9197f2ce-22f2-4d07-bc04-995dceb0716b"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sarana_nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="1" width="169" height="55" uuid="c60a0a99-139c-4c49-b640-ba0727ee81ae"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sarana_keterangan}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="55" width="555" height="1" uuid="734f24e1-c05b-40f2-9d54-54d5b0b415bf"/>
+			</line>
+			<textField>
+				<reportElement x="266" y="1" width="100" height="20" uuid="3a4db759-46f6-4395-a722-618902f5c138"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sarana_jenis_sarana}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="366" y="0" width="100" height="20" uuid="bf5d4879-f3be-405e-bd29-87b5f05d5c80"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="60" width="136" height="20" uuid="bb6bca2f-e13d-4c46-94c1-c900132bc58a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Siti Maryati, S.Pd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="20" width="100" height="20" uuid="3b6d849a-8eb1-4d68-ac11-354a8b1d79fa"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kelapa Sekolah]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="439" y="0" width="100" height="20" uuid="009158c2-fe3a-41a3-a2bf-28ce64fe7d41"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="399" y="75" width="136" height="20" uuid="bc70e8fc-2c31-4426-814f-3bc94951bee7"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[NIP.197009021991022001]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="feedsarana" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0032594-e522-40e8-999d-da50916b12ea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     feedback_layanan.`nama_siswa` AS feedback_layanan_nama_siswa,
+     feedback_layanan.`keterangan` AS feedback_layanan_keterangan,
+     feedback_layanan.`saran` AS feedback_layanan_saran
+FROM
+     `feedback_layanan` feedback_layanan]]>
+	</queryString>
+	<field name="feedback_layanan_nama_siswa" class="java.lang.String"/>
+	<field name="feedback_layanan_keterangan" class="java.lang.String"/>
+	<field name="feedback_layanan_saran" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="134" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="555" height="134" uuid="bcb6c22f-934a-4e91-852d-725bb4766c2c"/>
+				<imageExpression><![CDATA["C:\\Users\\FBS\\OneDrive\\Desktop\\1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="101" y="0" width="317" height="20" uuid="df8a1a96-72fb-49ae-833d-ceb929d080c6"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA PENGADUAN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="66e037d5-8b45-4740-98ab-991bbbeddc6e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="f94545ed-3e09-410f-841b-a462fa83a617"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="58a1bda2-70fe-4f5a-9b91-c55cf2ee1091"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA SISWA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="403" y="1" width="152" height="20" uuid="5a3f9834-2623-460f-8fe3-e9ea358efbad"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FEEDBACK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="186" y="1" width="137" height="20" uuid="a5a18fce-1951-467c-ae53-d38984142887"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KELUHAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="78" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="77" width="555" height="1" uuid="cbd41e9e-ced7-490a-b9f2-7b51d0dedbdb"/>
+			</line>
+			<textField>
+				<reportElement x="1" y="0" width="100" height="20" uuid="6abf1240-59ac-4c9b-b7e2-2d4cf0b3ea0b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{feedback_layanan_nama_siswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="186" y="0" width="137" height="77" uuid="a0ff951d-691a-451d-b1af-77084450218c"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{feedback_layanan_keterangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="0" width="152" height="77" uuid="3cc5ae2b-094a-4927-afa5-57ae72fbbd7b"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{feedback_layanan_saran}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="95" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="8d915b0c-c0ed-45d6-b8bf-23791a38c73d"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="382" y="0" width="100" height="20" uuid="094e4e34-8d1e-4cd8-bedf-f0c0d5f09102"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="75" width="136" height="20" uuid="a2f3045d-90ca-4cb8-90f5-328312e1aae2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[NIP.197009021991022001]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="415" y="60" width="136" height="20" uuid="a35224f3-e412-4988-97f7-b78b407aa4e5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Siti Maryati, S.Pd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="20" width="100" height="20" uuid="f241cad3-8cfa-48ab-a294-80ac5591f12f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Kelapa Sekolah]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
